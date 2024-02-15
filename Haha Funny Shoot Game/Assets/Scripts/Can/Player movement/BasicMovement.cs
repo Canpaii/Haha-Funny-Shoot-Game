@@ -103,7 +103,7 @@ public class BasicMovement : MonoBehaviour
             Jump();
             Invoke("ResetJump", jumpCooldown);
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && grounded)
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
@@ -140,6 +140,7 @@ public class BasicMovement : MonoBehaviour
             state = MovementState.airCrouch;
             rayLength = crouchHeight;
             speed = crouchSpeed;
+            rb.AddForce(Vector3.down * gravity, ForceMode.Force);
         }
         else //air fix infinite speed issue 
         {
