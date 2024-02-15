@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6017353433126628285}
   - component: {fileID: 3445590262000027333}
   - component: {fileID: 5075265087237053363}
+  - component: {fileID: 2614548203588086757}
   m_Layer: 0
-  m_Name: Bullet
-  m_TagString: Untagged
+  m_Name: Bullet M1 Garand
+  m_TagString: Bullet M1Garand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +115,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &2614548203588086757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7070311603989623128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3428f4c43f0cbd34bb43fdd9cd73be96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    //Gun stats
-    public float timeBetweenShooting, spread, reloadTime;
+    [Header("Gun stats")]
+    public float timeBetweenShooting;
+    public float spread;
+    public float zoomedSpread;
+    public float reloadTime;
     public float shootForce;
     public int magazineSize;
     public bool allowButtonHold;
     public int bulletsLeft;
 
-    //bools 
-    public bool shooting, readyToShoot, reloading;
+    [Header("Camera")]
+    public float zoomedFOV;
+    public float normalFOV;
 
-    //Reference
+    [Header("Bools")]
+    public bool shooting;
+    public bool readyToShoot;
+    public bool reloading;
+    public bool zoomed;
+
+    [Header("References")]
     public Camera fpsCam;
     public Transform attackPoint;
     public GameObject bullet;
+    public Transform zoomedPos;
+    public Transform gunContainer;
 
     public void Awake()
     {
@@ -43,7 +55,6 @@ public class GunScript : MonoBehaviour
         {
             Reload();
         }
-            
 
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
@@ -54,14 +65,26 @@ public class GunScript : MonoBehaviour
         {
             Reload();
         }
+
+        if (Input.GetButton("Fire2"))
+        {
+            Zoom();
+            zoomed = true;
+        }
+        else
+        {
+            ZoomOut();
+            zoomed = false;
+        }
     }
     public virtual void Shoot()
     {
         readyToShoot = false;
 
+        float currentspread = zoomed ? zoomedSpread : spread;
         //Spread
-        float x = Random.Range(-spread, spread);
-        float y = Random.Range(-spread, spread);
+        float x = Random.Range(-currentspread, currentspread);
+        float y = Random.Range(-currentspread, currentspread);
 
         //Calculate Direction with Spread
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
@@ -88,4 +111,25 @@ public class GunScript : MonoBehaviour
         bulletsLeft = magazineSize;
         reloading = false;
     }
-}
+    private void Zoom()
+    {
+    //    fpsCam.fieldOfView = zoomedFOV;
+    //    transform.SetParent(zoomedPos);
+
+    //    //reset properties
+    //    transform.position = Vector3.zero;
+    //    transform.rotation = Quaternion.identity;
+    //    transform.localScale = Vector3.one;
+    }
+    private void ZoomOut()
+    {
+    //    fpsCam.fieldOfView = normalFOV;
+    //    transform.SetParent(gunContainer);
+
+    //    //reset properties
+    //    transform.position = Vector3.zero;
+    //    transform.rotation = Quaternion.identity;
+    //    transform.localScale = Vector3.one;
+    //    //
+    }
+    }
