@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class StartLine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject timer;
+    public void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.transform.tag == ("Player"))
+        {
+            timer.GetComponent<Timer>().start = true;
+        }
     }
 }

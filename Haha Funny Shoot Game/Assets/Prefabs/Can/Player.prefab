@@ -23,15 +23,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94657457}
-  m_LocalRotation: {x: -0.057564918, y: -0.06801208, z: -0.003930776, w: 0.99601465}
-  m_LocalPosition: {x: 0.275, y: -0.32662272, z: 0.639}
+  m_LocalRotation: {x: -0.057682663, y: -0.023730526, z: -0.0013715111, w: 0.99805194}
+  m_LocalPosition: {x: 0.275, y: -0.32662272, z: 0.68}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.80000013}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1505078777}
   m_Father: {fileID: 4956191009351991367}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.615, y: -2.724, z: 0}
 --- !u!1 &1505078776
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505078776}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -147,21 +147,22 @@ MonoBehaviour:
   spread: 0.1
   zoomedSpread: 0
   reloadTime: 2
-  zoomedFOV: 0
-  normalFOV: 0
   shootForce: 30
   magazineSize: 8
   allowButtonHold: 0
   bulletsLeft: 0
+  zoomedFOV: 30
+  normalFOV: 60
   shooting: 0
   readyToShoot: 0
   reloading: 0
   zoomed: 0
+  secondary: 0
   fpsCam: {fileID: 4956191009351991364}
   attackPoint: {fileID: 2104478788}
   bullet: {fileID: 2021379165320821281, guid: 58f2a1202d228aa4785a4ca67ecc3848, type: 3}
-  zoomedPos: {fileID: 0}
-  gunContainer: {fileID: 0}
+  zoomedPos: {fileID: 6153147646984330181}
+  gunContainer: {fileID: 94657458}
 --- !u!1 &2104478787
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,8 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e122eb29ff9e04bacdfde51d91baf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityX: 10
-  sensitivityY: 10
+  sensitivityX: 7
+  sensitivityY: 7
   minXRotation: -85
   maxXRotation: 85
 --- !u!114 &7114828102910639572
@@ -391,7 +392,7 @@ GameObject:
   - component: {fileID: 4956191010250594519}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,7 +493,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &4956191010250594519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,8 +553,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9118747774906613463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.31, z: 0.731}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.257, z: 0.94}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4956191009351991367}

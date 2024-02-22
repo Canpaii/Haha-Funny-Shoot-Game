@@ -23,6 +23,7 @@ public class GunScript : MonoBehaviour
     public bool readyToShoot;
     public bool reloading;
     public bool zoomed;
+    public bool secondary;
 
     [Header("References")]
     public Camera fpsCam;
@@ -71,7 +72,7 @@ public class GunScript : MonoBehaviour
             Zoom();
             zoomed = true;
         }
-        else
+        else if (zoomed == true && !Input.GetButton("Fire2"))
         {
             ZoomOut();
             zoomed = false;
@@ -113,23 +114,23 @@ public class GunScript : MonoBehaviour
     }
     private void Zoom()
     {
-    //    fpsCam.fieldOfView = zoomedFOV;
-    //    transform.SetParent(zoomedPos);
+        Camera.main.fieldOfView = zoomedFOV;
+        transform.SetParent(zoomedPos);
 
-    //    //reset properties
-    //    transform.position = Vector3.zero;
-    //    transform.rotation = Quaternion.identity;
-    //    transform.localScale = Vector3.one;
+        //reset properties
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localScale = Vector3.one;
     }
     private void ZoomOut()
     {
-    //    fpsCam.fieldOfView = normalFOV;
-    //    transform.SetParent(gunContainer);
-
-    //    //reset properties
-    //    transform.position = Vector3.zero;
-    //    transform.rotation = Quaternion.identity;
-    //    transform.localScale = Vector3.one;
-    //    //
+        
+        Camera.main.fieldOfView = normalFOV;
+        transform.SetParent(gunContainer);
+        
+        // reset properties
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localScale = Vector3.one;
     }
-    }
+}
