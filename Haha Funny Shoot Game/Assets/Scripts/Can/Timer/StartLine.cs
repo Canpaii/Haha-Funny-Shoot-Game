@@ -9,7 +9,8 @@ public class StartLine : MonoBehaviour
     {
         if (other.transform.tag == ("Player"))
         {
-            timer.GetComponent<Timer>().start = true;
+            timer.GetComponent<Timer>().isRunning = true;
+            timer.GetComponent<Timer>().startTimerFlag = true;
         }
     }
 }
