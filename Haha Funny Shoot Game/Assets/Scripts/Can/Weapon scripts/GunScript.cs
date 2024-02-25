@@ -31,6 +31,10 @@ public class GunScript : MonoBehaviour
     public GameObject bullet;
     public Transform zoomedPos;
     public Transform gunContainer;
+    public Rigidbody player;
+
+    [Header("Other settings")]
+    public float interpolationSpeed;
 
     public void Awake()
     {
@@ -40,6 +44,7 @@ public class GunScript : MonoBehaviour
     public void Update()
     {
         MyInput();
+        Zoom();
     }
     public virtual void MyInput()
     {
@@ -66,22 +71,10 @@ public class GunScript : MonoBehaviour
         {
             Reload();
         }
-
-        if (Input.GetButton("Fire2"))
-        {
-            Zoom();
-            zoomed = true;
-        }
-        else if (zoomed == true && !Input.GetButton("Fire2"))
-        {
-            ZoomOut();
-            zoomed = false;
-        }
     }
     public virtual void Shoot()
     {
         readyToShoot = false;
-
         float currentspread = zoomed ? zoomedSpread : spread;
         //Spread
         float x = Random.Range(-currentspread, currentspread);
@@ -114,23 +107,22 @@ public class GunScript : MonoBehaviour
     }
     private void Zoom()
     {
-        Camera.main.fieldOfView = zoomedFOV;
-        transform.SetParent(zoomedPos);
 
-        //reset properties
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
-        transform.localScale = Vector3.one;
-    }
-    private void ZoomOut()
-    {
-        
-        Camera.main.fieldOfView = normalFOV;
-        transform.SetParent(gunContainer);
-        
-        // reset properties
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
-        transform.localScale = Vector3.one;
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            zoomed = true;
+        }
+        else
+        {
+            zoomed = false;
+        }
+
+        Transform targetPoint = Input.GetKey(KeyCode.Mouse1) ? zoomedPos : gunContainer;
+
+        transform.position = Vector3.Lerp(transform.position, targetPoint.position, interpolationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetPoint.rotation, interpolationSpeed * Time.deltaTime);
+
+        float targetFOV = zoomed ? zoomedFOV : normalFOV;
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, targetFOV, interpolationSpeed * Time.deltaTime);
     }
 }

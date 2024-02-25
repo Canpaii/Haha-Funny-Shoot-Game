@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     private float startTimer;
     public bool startTimerFlag;
     public bool isRunning;
+    public float elapsedTime;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class Timer : MonoBehaviour
         }
         if (isRunning)
         {
-            float elapsedTime = Time.time - startTimer;
+            elapsedTime = Time.time - startTimer;
             UpdateTimer(elapsedTime);
         }
     }
@@ -38,6 +39,6 @@ public class Timer : MonoBehaviour
         float seconds = Mathf.FloorToInt(elapsedTime % 60);
         float miliseconds = Mathf.FloorToInt((elapsedTime * 100) % 100);
 
-        timerText.text = string.Format("{0:000}:{1:00}.{2:00}", minutes, seconds, miliseconds);
+        timerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, miliseconds);
     }
 }
