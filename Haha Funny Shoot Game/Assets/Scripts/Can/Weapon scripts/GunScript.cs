@@ -23,7 +23,6 @@ public class GunScript : MonoBehaviour
     public bool readyToShoot;
     public bool reloading;
     public bool zoomed;
-    public bool secondary;
 
     [Header("References")]
     public Camera fpsCam;
@@ -31,7 +30,6 @@ public class GunScript : MonoBehaviour
     public GameObject bullet;
     public Transform zoomedPos;
     public Transform gunContainer;
-    public Rigidbody player;
 
     [Header("Other settings")]
     public float interpolationSpeed;
@@ -88,6 +86,7 @@ public class GunScript : MonoBehaviour
         currentBullet.GetComponent<Rigidbody>().AddForce(direction.normalized * shootForce, ForceMode.Impulse);
         bulletsLeft--;
 
+        GetComponent<GunRecoil>().Shoot();
         Invoke("ResetShot", timeBetweenShooting);
       
     }
