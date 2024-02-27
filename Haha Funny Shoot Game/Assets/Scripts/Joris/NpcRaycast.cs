@@ -5,11 +5,8 @@ using UnityEngine;
 public class NpcRaycast : MonoBehaviour
 {
     public float rayLength;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject talk;
+    public bool presF;
 
     // Update is called once per frame
     void Update()
@@ -18,11 +15,24 @@ public class NpcRaycast : MonoBehaviour
 
         if(Physics.Raycast(transform.position,transform.forward, out hit, rayLength) && hit.transform.tag == "Npc")
         {
-            // show talk button ui
+            if(presF == true)
+            {
+                talk.SetActive(false);
+            }
+            else
+            {
+                talk.SetActive(true);
+            }
+
+            // show talk button ui    F to talk
             if (Input.GetKeyDown(KeyCode.F))
             {
-                print("wee");
+                presF = true;
             }
+        }
+        else 
+        {
+            talk.SetActive (false);
         }
     }
 }
