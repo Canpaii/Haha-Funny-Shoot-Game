@@ -10,11 +10,11 @@ public class GunSwap : MonoBehaviour
     void Update()
     {
         scrollInput = Input.GetAxisRaw("Mouse ScrollWheel");
-        if (scrollInput > 0f)
+        if (scrollInput > 0 && !secondaryGun.GetComponent<GunScript>().zoomed)
         {
             SwitchToPrimaryGun();
         }
-        else if (scrollInput < 0f)
+        else if (scrollInput < 0 && !primaryGun.GetComponent<GunScript>().zoomed)
         {
             SwitchToSecondaryGun();
         }

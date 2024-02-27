@@ -12,8 +12,8 @@ public class BasicMovement : MonoBehaviour
     public float walkspeed;
     public float sprintSpeed;
     public float gravity;
-
     public float groundDrag;
+
     float hor;
     float vert;
 

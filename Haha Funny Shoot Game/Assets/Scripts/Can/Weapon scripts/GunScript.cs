@@ -83,7 +83,9 @@ public class GunScript : MonoBehaviour
 
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
         currentBullet.transform.forward = direction.normalized;
+
         currentBullet.GetComponent<Rigidbody>().AddForce(direction.normalized * shootForce, ForceMode.Impulse);
+
         bulletsLeft--;
 
         GetComponent<GunRecoil>().Shoot();
