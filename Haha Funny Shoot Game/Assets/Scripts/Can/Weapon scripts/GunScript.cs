@@ -35,6 +35,7 @@ public class GunScript : MonoBehaviour
 
     [Header("Other settings")]
     public float interpolationSpeed;
+    private Coroutine reloadCoroutine;
 
     public void Awake()
     {
@@ -70,6 +71,9 @@ public class GunScript : MonoBehaviour
         if (readyToShoot && shooting && !reloading && bulletsLeft <= 0 && !sprinting.sprinting && !zoomed)
         {
             Reload();
+        }
+        if (zoomed | sprinting.sprinting)
+        {
         }
     }
     public virtual void Shoot()
