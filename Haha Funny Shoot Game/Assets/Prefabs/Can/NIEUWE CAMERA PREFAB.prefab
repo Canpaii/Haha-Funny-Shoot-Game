@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 6987410144985615884}
   - component: {fileID: 6987410144985615887}
   - component: {fileID: 136832050070106186}
+  - component: {fileID: 192817407373831512}
   m_Layer: 0
   m_Name: NIEUWE CAMERA PREFAB
   m_TagString: MainCamera
@@ -549,6 +550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayLength: 3
+  talk: {fileID: 0}
+  presF: 0
 --- !u!114 &6987410144985615887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +580,25 @@ MonoBehaviour:
   primaryGun: {fileID: 163456660371004960}
   secondaryGun: {fileID: 3648378772308638244}
   scrollInput: 0
+--- !u!114 &192817407373831512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081005418227528674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yes1: {fileID: 0}
+  yes2: {fileID: 0}
+  no1: {fileID: 0}
+  no2: {fileID: 0}
+  hello: {fileID: 0}
+  uitleg: {fileID: 0}
+  veelSucces: {fileID: 0}
 --- !u!1 &8982534818084543412
 GameObject:
   m_ObjectHideFlags: 0

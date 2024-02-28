@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6515244749304881976}
   - component: {fileID: 6515244749304881980}
   - component: {fileID: 6515244749304881977}
+  - component: {fileID: 458386830}
   m_Layer: 0
   m_Name: NIEUW PLAYER PREFAB
   m_TagString: Player
@@ -134,7 +135,7 @@ MonoBehaviour:
   walkspeed: 7
   sprintSpeed: 10
   gravity: 2
-  groundDrag: 5
+  groundDrag: 8
   jumpForce: 9
   jumpCooldown: 0.25
   airMultiplier: 0.4
@@ -153,6 +154,18 @@ MonoBehaviour:
   maxSlopeAngle: 40
   exitingSlope: 0
   state: 0
+--- !u!114 &458386830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515244749304881978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6515244749457843404
 GameObject:
   m_ObjectHideFlags: 0

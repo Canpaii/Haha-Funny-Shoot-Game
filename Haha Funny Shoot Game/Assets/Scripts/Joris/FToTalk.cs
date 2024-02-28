@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class FToTalk : MonoBehaviour
 {
-    public GameObject talk;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject yes1;
+    public GameObject yes2;
+    public GameObject no1;
+    public GameObject no2;
 
+    public GameObject hello;
+    public GameObject uitleg;
+    public GameObject veelSucces;
+    
     // Update is called once per frame
-    void Update()
+    public void Talk()
     {
         
     }

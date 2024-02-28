@@ -9,9 +9,10 @@ public class NpcRaycast : MonoBehaviour
     public bool presF;
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         RaycastHit hit;
+
 
         if(Physics.Raycast(transform.position,transform.forward, out hit, rayLength) && hit.transform.tag == "Npc")
         {
@@ -28,6 +29,7 @@ public class NpcRaycast : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 presF = true;
+                GetComponent<FToTalk>().Talk();
             }
         }
         else 
