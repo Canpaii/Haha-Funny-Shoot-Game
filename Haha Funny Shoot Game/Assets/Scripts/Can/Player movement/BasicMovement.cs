@@ -11,6 +11,7 @@ public class BasicMovement : MonoBehaviour
     public float speed;
     public float walkspeed;
     public float sprintSpeed;
+    public bool sprinting;
     public float gravity;
     public float groundDrag;
 
@@ -35,6 +36,8 @@ public class BasicMovement : MonoBehaviour
     public Transform orientation;
     Rigidbody rb;
     private Vector3 moveDirection;
+    public GunScript zoomM1Garand;
+    public GunScript zoomLugerPistol;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -55,6 +58,7 @@ public class BasicMovement : MonoBehaviour
         walking,
         crouching,
         sprinting,
+        airSprint,
         airCrouch,
         air,
     }
@@ -97,7 +101,7 @@ public class BasicMovement : MonoBehaviour
         hor = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(KeyCode.Space) && readyToJump && grounded)
+        if(Input.GetKey(KeyCode.Space) && readyToJump && grounded && !crouching)
         {
             readyToJump = false;
             Jump();
@@ -114,16 +118,29 @@ public class BasicMovement : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             crouching = false;
         }
+
+        if (rb.velocity == Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+        {
+            sprinting = false;
+        }
+        else if (Input.GetKey(KeyCode.LeftShift) && !zoomM1Garand.zoomed && !zoomLugerPistol.zoomed)
+        {
+            sprinting = true;
+        }
+        else
+        {
+            sprinting = false;
+        }
     }   
     private void StateHandler()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && grounded) // crouching
+        if (crouching && grounded) // crouching
         {
             state = MovementState.crouching;
             speed = crouchSpeed;
             rayLength = crouchHeight;
         }
-        else if(grounded && Input.GetKey(KeyCode.LeftShift)) // sprinting 
+        else if(grounded && sprinting) // sprinting 
         {
             state = MovementState.sprinting;
             speed = sprintSpeed;
@@ -135,18 +152,24 @@ public class BasicMovement : MonoBehaviour
             speed = walkspeed;
             rayLength = playerHeight;
         }
-        else if (crouching && ! grounded)//air crouching fix infinite speed issue 
+        else if (crouching && !grounded) //Crouching in air
         {
             state = MovementState.airCrouch;
             rayLength = crouchHeight;
             speed = crouchSpeed;
+            sprinting = false;
             rb.AddForce(Vector3.down * gravity, ForceMode.Force);
         }
-        else //air fix infinite speed issue 
+        else if (!grounded && sprinting) //Sprinting in air
+        {
+            state = MovementState.airSprint;
+            rayLength = playerHeight;
+            rb.AddForce(Vector3.down * gravity, ForceMode.Force);
+        }
+        else //air 
         {
             state = MovementState.air;
             rayLength = playerHeight;
-            speed = walkspeed;
             rb.AddForce(Vector3.down * gravity, ForceMode.Force);
         }
     }
@@ -170,6 +193,7 @@ public class BasicMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * speed * 10 * airMultiplier, ForceMode.Force); 
         }
+
         rb.useGravity = !OnSlope();
     }
     private void SpeedControl()

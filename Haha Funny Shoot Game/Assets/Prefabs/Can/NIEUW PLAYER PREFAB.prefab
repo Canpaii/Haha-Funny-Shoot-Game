@@ -96,7 +96,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6515244749304881978}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 839e507e936570f47b77a1452705f6e9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -134,9 +134,10 @@ MonoBehaviour:
   speed: 0
   walkspeed: 7
   sprintSpeed: 10
+  sprinting: 0
   gravity: 2
   groundDrag: 8
-  jumpForce: 9
+  jumpForce: 8
   jumpCooldown: 0.25
   airMultiplier: 0.4
   readyToJump: 0
@@ -145,6 +146,8 @@ MonoBehaviour:
   crouchHeight: 1
   crouching: 0
   orientation: {fileID: 6515244749472463084}
+  zoomM1Garand: {fileID: 0}
+  zoomLugerPistol: {fileID: 0}
   playerHeight: 2
   rayLength: 0
   whatIsGround:
@@ -166,6 +169,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yes1: {fileID: 0}
+  yes2: {fileID: 0}
+  no1: {fileID: 0}
+  no2: {fileID: 0}
+  hello: {fileID: 0}
+  uitleg: {fileID: 0}
+  veelSucces: {fileID: 0}
 --- !u!1 &6515244749457843404
 GameObject:
   m_ObjectHideFlags: 0

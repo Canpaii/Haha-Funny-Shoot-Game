@@ -30,6 +30,8 @@ public class GunScript : MonoBehaviour
     public GameObject bullet;
     public Transform zoomedPos;
     public Transform gunContainer;
+    public Transform sprintPos;
+    public BasicMovement sprinting;
 
     [Header("Other settings")]
     public float interpolationSpeed;
@@ -42,7 +44,7 @@ public class GunScript : MonoBehaviour
     public void Update()
     {
         MyInput();
-        Zoom();
+        Interpolation();
     }
     public virtual void MyInput()
     {
@@ -55,17 +57,17 @@ public class GunScript : MonoBehaviour
             shooting = Input.GetKeyDown(KeyCode.Mouse0); 
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading && !sprinting.sprinting && !zoomed)
         {
             Reload();
         }
 
         //Shoot
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0 && !sprinting.sprinting)
         {
             Shoot();
         }
-        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0)
+        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0 && !sprinting.sprinting && !zoomed)
         {
             Reload();
         }
@@ -106,19 +108,19 @@ public class GunScript : MonoBehaviour
         bulletsLeft = magazineSize;
         reloading = false;
     }
-    private void Zoom()
+    private void Interpolation()
     {
-
         if (Input.GetKey(KeyCode.Mouse1))
         {
             zoomed = true;
+            sprinting.sprinting = false;
         }
         else
         {
             zoomed = false;
         }
 
-        Transform targetPoint = Input.GetKey(KeyCode.Mouse1) ? zoomedPos : gunContainer;
+        Transform targetPoint = Input.GetKey(KeyCode.Mouse1) ? zoomedPos : sprinting.sprinting ? sprintPos : gunContainer;
 
         transform.position = Vector3.Lerp(transform.position, targetPoint.position, interpolationSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetPoint.rotation, interpolationSpeed * Time.deltaTime);

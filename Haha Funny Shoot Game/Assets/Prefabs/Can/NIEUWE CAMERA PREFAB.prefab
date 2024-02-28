@@ -1,5 +1,154 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1253128427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253128428}
+  m_Layer: 0
+  m_Name: SprintPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253128428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253128427}
+  m_LocalRotation: {x: -0.04175761, y: -0.7225093, z: 0.039818, w: 0.6889493}
+  m_LocalPosition: {x: 0.277, y: -0.33099997, z: 0.6380005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5081005418227528607}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &1953735955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953735959}
+  - component: {fileID: 1953735956}
+  - component: {fileID: 1953735958}
+  - component: {fileID: 1953735957}
+  m_Layer: 0
+  m_Name: WeaponCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953735959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953735955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5081005418227528607}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1953735956
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953735955}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 4
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &1953735958
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953735955}
+  m_Enabled: 1
+--- !u!114 &1953735957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953735955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 1
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &163456659228993641
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,7 +175,7 @@ Transform:
   m_GameObject: {fileID: 163456659228993641}
   m_LocalRotation: {x: -0.057682663, y: -0.023730526, z: -0.0013715111, w: 0.99805194}
   m_LocalPosition: {x: 0.277, y: -0.331, z: 0.638}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.80000013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 163456660371004961}
@@ -93,7 +242,7 @@ GameObject:
   - component: {fileID: 163456660371004963}
   - component: {fileID: 163456660371004962}
   - component: {fileID: 1167378236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M1 Garand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 163456660371004960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 163456659896647580}
@@ -210,6 +359,8 @@ MonoBehaviour:
   bullet: {fileID: 7070311603989623128, guid: 2370c0661cb9fc44ca8b69b3712c096e, type: 3}
   zoomedPos: {fileID: 6278274994697431069}
   gunContainer: {fileID: 163456659228993642}
+  sprintPos: {fileID: 1253128428}
+  sprinting: {fileID: 0}
   interpolationSpeed: 8
 --- !u!114 &1167378236
 MonoBehaviour:
@@ -223,8 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eafcff94349d374e9a49c061dca22ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmount: 17
-  recoilAmount: 17
+  shakeAmount: 10
+  recoilAmount: 10
   recoilSpeed: 1.8
   shakeSpeed: 1.8
   resetPOS: 0.1
@@ -241,9 +392,8 @@ GameObject:
   - component: {fileID: 1351608091000348118}
   - component: {fileID: 1618710138133217955}
   - component: {fileID: 4908364176412464718}
-  - component: {fileID: 1066910768}
   - component: {fileID: 1066910769}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lugar Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 3648378772308638244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.8}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4594127168600767656}
@@ -360,24 +510,9 @@ MonoBehaviour:
   bullet: {fileID: 2021379165320821281, guid: 58f2a1202d228aa4785a4ca67ecc3848, type: 3}
   zoomedPos: {fileID: 6278274994697431069}
   gunContainer: {fileID: 163456659228993642}
+  sprintPos: {fileID: 0}
+  sprinting: {fileID: 0}
   interpolationSpeed: 8
---- !u!114 &1066910768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648378772308638244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eafcff94349d374e9a49c061dca22ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeAmount: 0
-  recoilAmount: 0
-  recoilSpeed: 0
-  shakeSpeed: 0
-  resetPOS: 0
 --- !u!114 &1066910769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,8 +525,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eafcff94349d374e9a49c061dca22ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmount: 15
-  recoilAmount: 15
+  shakeAmount: 10
+  recoilAmount: 10
   recoilSpeed: 2
   shakeSpeed: 2
   resetPOS: 0.05
@@ -433,6 +568,8 @@ Transform:
   m_Children:
   - {fileID: 163456659228993642}
   - {fileID: 6278274994697431069}
+  - {fileID: 1253128428}
+  - {fileID: 1953735959}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -467,13 +604,13 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -503,7 +640,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 1953735956}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
