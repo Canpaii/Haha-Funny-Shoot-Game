@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -596,6 +596,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &730758547 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5081005418227528607, guid: 098df17bfa21c8e4db17e117b42b4e1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5081005418431495261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &762782921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1598,11 @@ PrefabInstance:
       propertyPath: sprinting
       value: 
       objectReference: {fileID: 489474231}
+    - target: {fileID: 4908364176412464718, guid: 098df17bfa21c8e4db17e117b42b4e1e,
+        type: 3}
+      propertyPath: sprinting
+      value: 
+      objectReference: {fileID: 489474231}
     - target: {fileID: 5081005418227528601, guid: 098df17bfa21c8e4db17e117b42b4e1e,
         type: 3}
       propertyPath: orientation
@@ -1740,6 +1751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 814436521, guid: df9f17c9b28ecc94eadc2ef3e6812b0f, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 730758547}
     - target: {fileID: 6515244749304881977, guid: df9f17c9b28ecc94eadc2ef3e6812b0f,
         type: 3}
       propertyPath: zoomM1Garand

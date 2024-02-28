@@ -115,7 +115,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953735955}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &1953735957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   bullet: {fileID: 2021379165320821281, guid: 58f2a1202d228aa4785a4ca67ecc3848, type: 3}
   zoomedPos: {fileID: 6278274994697431069}
   gunContainer: {fileID: 163456659228993642}
-  sprintPos: {fileID: 0}
+  sprintPos: {fileID: 1253128428}
   sprinting: {fileID: 0}
   interpolationSpeed: 8
 --- !u!114 &1066910769
