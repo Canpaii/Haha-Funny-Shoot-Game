@@ -74,7 +74,10 @@ public class GunScript : MonoBehaviour
         }
         if (zoomed || sprinting.sprinting)
         {
-
+            if(reloadCoroutine != null)
+            {
+                StopCoroutine(reloadCoroutine);
+            }
         }
     }
     public virtual void Shoot()
@@ -97,7 +100,6 @@ public class GunScript : MonoBehaviour
 
         GetComponent<GunRecoil>().Shoot();
         Invoke("ResetShot", timeBetweenShooting);
-      
     }
     public void ResetShot()
     {
@@ -106,10 +108,13 @@ public class GunScript : MonoBehaviour
     public void Reload()
     {
         reloading = true;
-        Invoke("ReloadFinished", reloadTime);
+
+       reloadCoroutine = StartCoroutine(ReloadCoroutine());
     }
-    public void ReloadFinished()
+    public IEnumerator ReloadCoroutine()
     {
+        yield return new WaitForSeconds(reloadTime);
+
         bulletsLeft = magazineSize;
         reloading = false;
     }
