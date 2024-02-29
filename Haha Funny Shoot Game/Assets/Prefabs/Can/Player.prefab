@@ -843,7 +843,6 @@ GameObject:
   - component: {fileID: 7547803296303888859}
   - component: {fileID: 7547803296303888863}
   - component: {fileID: 7547803296303888858}
-  - component: {fileID: 3663084076177209197}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -986,25 +985,6 @@ MonoBehaviour:
   maxSlopeAngle: 40
   exitingSlope: 0
   state: 0
---- !u!114 &3663084076177209197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7547803296303888857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yes1: {fileID: 0}
-  ok1: {fileID: 0}
-  no1: {fileID: 0}
-  ok2: {fileID: 0}
-  hello: {fileID: 0}
-  uitleg: {fileID: 0}
-  veelSucces: {fileID: 0}
 --- !u!1 &7547803296605676046
 GameObject:
   m_ObjectHideFlags: 0

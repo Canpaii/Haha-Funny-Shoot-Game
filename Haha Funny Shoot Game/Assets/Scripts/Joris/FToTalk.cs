@@ -28,12 +28,14 @@ public class FToTalk : MonoBehaviour
     // Update is called once per frame
     public void Hello()
     {
+        Cursor.visible = true;
+         
         yes1.SetActive (true);
         no1.SetActive (true);
         hello.SetActive (true);     
     }
 
-    public void Update()
+    public void explain()
     {
         yes1 .SetActive (false);
         no1 .SetActive (false);
@@ -56,5 +58,7 @@ public class FToTalk : MonoBehaviour
     {
         ok2.SetActive(false);
         veelSucces.SetActive (false);
+
+        Cursor.visible = false;
     }
 }
