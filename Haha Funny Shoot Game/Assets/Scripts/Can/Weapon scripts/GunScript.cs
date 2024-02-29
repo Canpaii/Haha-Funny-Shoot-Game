@@ -72,8 +72,9 @@ public class GunScript : MonoBehaviour
         {
             Reload();
         }
-        if (zoomed | sprinting.sprinting)
+        if (zoomed || sprinting.sprinting)
         {
+
         }
     }
     public virtual void Shoot()

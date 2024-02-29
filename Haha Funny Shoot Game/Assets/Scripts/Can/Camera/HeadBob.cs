@@ -4,73 +4,44 @@ using UnityEngine;
 
 public class HeadBob : MonoBehaviour
 {
-    [SerializeField] private bool enableBob;
-
     [SerializeField, Range(0f, 0.1f)] private float amplitude;
     [SerializeField, Range(0, 30)] private float frequency;
 
-    [SerializeField] private Transform _camera;
-    [SerializeField] private Transform cameraHolder;
+    [SerializeField, Range(0, 10)] private float smooth;
 
-    [SerializeField] private float toggelSpeed;
-    [SerializeField] private float lerpSpeed;
     private Vector3 startPos;
-    [SerializeField]private Rigidbody player;
-    private BasicMovement controller;
-    [SerializeField] private Vector3 pos;
     private void Awake()
     {
-        controller = GetComponent<BasicMovement>();
-        startPos = _camera.localPosition;
+        startPos = transform.localPosition;
     }
     private void Update()
     {
-        print(pos);
-        if (!enableBob)
-        {
-            return;
-        }
         CheckMotion();
-        _camera.LookAt(FocusTarget());
+        ResetPosition();
     }
     private void CheckMotion()
     {
-        ResetPosition();
-        float speed = new Vector3(player.velocity.x, 0, player.velocity.z).magnitude;
-        if (speed < toggelSpeed)
+        float inputMagnitude = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).magnitude;
+        if (inputMagnitude > 0)
         {
-            return;
+            FootStepMotion();
         }
-        if (!controller.grounded)
-        {
-            return;
-        }
-        PlayMotion(FootStepMotion());
     }
     private Vector3 FootStepMotion()
     {
-        pos = Vector3.zero;
-        pos.y += Mathf.Sin(Time.time * frequency * amplitude);
-        pos.y += Mathf.Sin(Time.time * frequency/2) * amplitude * 2;
+        Vector3 pos = Vector3.zero;
+        pos.y += Mathf.Lerp(pos.y, Mathf.Sin(Time.time * frequency) * amplitude * 1.4f, smooth * Time.deltaTime);
+        pos.x += Mathf.Lerp(pos.x, Mathf.Sin(Time.time * frequency / 2f) * amplitude * 1.6f, smooth * Time.deltaTime);
+        transform.localPosition += pos
+            ;
         return pos;
-    }
-    private void PlayMotion(Vector3 motion)
-    {
-        _camera.localPosition += motion;
     }
     private void ResetPosition()
     {
-        if (_camera.localPosition == startPos)
+        if (transform.localPosition == startPos)
         {
             return;
         }
-        _camera.localPosition = Vector3.Lerp(_camera.localPosition, startPos,lerpSpeed * Time.deltaTime);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, startPos,1 * Time.deltaTime);
     }
-    private Vector3 FocusTarget()
-    {
-        pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        pos += cameraHolder.forward * 15;
-        return pos;
-    }
-    
 }
