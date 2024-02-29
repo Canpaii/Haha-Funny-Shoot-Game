@@ -29,10 +29,11 @@ public class FToTalk : MonoBehaviour
     public void Hello()
     {
         Cursor.visible = true;
+        
          
         yes1.SetActive (true);
         no1.SetActive (true);
-        hello.SetActive (true);     
+        hello.SetActive (true);
     }
 
     public void explain()

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 158155133}
   - component: {fileID: 158155132}
   - component: {fileID: 158155131}
+  - component: {fileID: 158155134}
   m_Layer: 5
   m_Name: ok 2
   m_TagString: Untagged
@@ -206,7 +207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 158155132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 158155134}
+        m_TargetAssemblyTypeName: FToTalk, Assembly-CSharp
+        m_MethodName: echtDoei
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &158155132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +258,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158155129}
   m_CullTransparentMesh: 1
+--- !u!114 &158155134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158155129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yes1: {fileID: 2097104546}
+  ok1: {fileID: 516072641}
+  no1: {fileID: 1265556102}
+  ok2: {fileID: 158155129}
+  hello: {fileID: 1112886142}
+  uitleg: {fileID: 322802029}
+  veelSucces: {fileID: 1205032935}
 --- !u!1 &322802029
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +492,7 @@ GameObject:
   - component: {fileID: 516072645}
   - component: {fileID: 516072644}
   - component: {fileID: 516072643}
+  - component: {fileID: 516072646}
   m_Layer: 5
   m_Name: ok1
   m_TagString: Untagged
@@ -531,7 +564,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 516072644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 516072646}
+        m_TargetAssemblyTypeName: FToTalk, Assembly-CSharp
+        m_MethodName: doei
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &516072644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +615,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516072641}
   m_CullTransparentMesh: 1
+--- !u!114 &516072646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516072641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yes1: {fileID: 2097104546}
+  ok1: {fileID: 516072641}
+  no1: {fileID: 1265556102}
+  ok2: {fileID: 158155129}
+  hello: {fileID: 1112886142}
+  uitleg: {fileID: 322802029}
+  veelSucces: {fileID: 1205032935}
 --- !u!1 &645564509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1353,7 @@ GameObject:
   - component: {fileID: 1112886143}
   - component: {fileID: 1112886145}
   - component: {fileID: 1112886144}
+  - component: {fileID: 1112886146}
   m_Layer: 5
   m_Name: hello
   m_TagString: Untagged
@@ -1413,6 +1478,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112886142}
   m_CullTransparentMesh: 1
+--- !u!114 &1112886146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112886142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yes1: {fileID: 0}
+  ok1: {fileID: 0}
+  no1: {fileID: 0}
+  ok2: {fileID: 0}
+  hello: {fileID: 0}
+  uitleg: {fileID: 0}
+  veelSucces: {fileID: 0}
 --- !u!1 &1205032935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1644,7 @@ GameObject:
   - component: {fileID: 1265556106}
   - component: {fileID: 1265556105}
   - component: {fileID: 1265556104}
+  - component: {fileID: 1265556107}
   m_Layer: 5
   m_Name: no1
   m_TagString: Untagged
@@ -1631,7 +1716,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1265556105}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1265556107}
+        m_TargetAssemblyTypeName: FToTalk, Assembly-CSharp
+        m_MethodName: explain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1265556105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,6 +1767,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265556102}
   m_CullTransparentMesh: 1
+--- !u!114 &1265556107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265556102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yes1: {fileID: 2097104546}
+  ok1: {fileID: 516072641}
+  no1: {fileID: 1265556102}
+  ok2: {fileID: 158155129}
+  hello: {fileID: 1112886142}
+  uitleg: {fileID: 322802029}
+  veelSucces: {fileID: 1205032935}
 --- !u!1 &1423722602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,6 +2291,7 @@ GameObject:
   - component: {fileID: 2097104550}
   - component: {fileID: 2097104549}
   - component: {fileID: 2097104548}
+  - component: {fileID: 2097104551}
   m_Layer: 5
   m_Name: yes1
   m_TagString: Untagged
@@ -2247,10 +2364,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 2097104551}
+        m_TargetAssemblyTypeName: FToTalk, Assembly-CSharp
+        m_MethodName: doei
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2297,6 +2414,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097104546}
   m_CullTransparentMesh: 1
+--- !u!114 &2097104551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097104546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dee90c647c73a4a9693e3fcb9e0eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yes1: {fileID: 2097104546}
+  ok1: {fileID: 516072641}
+  no1: {fileID: 1265556102}
+  ok2: {fileID: 158155129}
+  hello: {fileID: 1112886142}
+  uitleg: {fileID: 322802029}
+  veelSucces: {fileID: 1205032935}
 --- !u!1001 &3648780506090772370
 PrefabInstance:
   m_ObjectHideFlags: 0
