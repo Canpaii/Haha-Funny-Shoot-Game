@@ -29,7 +29,7 @@ public class NpcRaycast : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 presF = true;
-                GetComponent<FToTalk>().Talk();
+                GetComponent<FToTalk>().Hello();
             }
         }
         else 
