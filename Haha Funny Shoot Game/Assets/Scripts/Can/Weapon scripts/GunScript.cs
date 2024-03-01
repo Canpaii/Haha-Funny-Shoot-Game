@@ -77,6 +77,7 @@ public class GunScript : MonoBehaviour
             if(reloadCoroutine != null)
             {
                 StopCoroutine(reloadCoroutine);
+                reloading = false;
             }
         }
     }
