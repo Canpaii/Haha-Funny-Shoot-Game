@@ -8,37 +8,37 @@ using UnityEngine.Rendering;
 public class Timer : MonoBehaviour
 {
     public TMP_Text timerText;
+    public TimerPenalty penalty;
     private float startTimer;
-    public bool startTimerFlag;
-    public bool isRunning;
+    private bool isRunning = false;
     public float elapsedTime;
 
-    private void Start()
+    public void StartRunning()
     {
         timerText.text = "0:00.00";
+        startTimer = Time.time;
+        isRunning = true;
+        timerText.text = FormatTime(elapsedTime);
+    }
+    public void StopRunning()
+    {
         isRunning = false;
-        startTimerFlag = false;
     }
     private void Update()
     {
-        if (startTimerFlag)
-        {
-            startTimer = Time.time;
-            startTimerFlag = false;
-        }
         if (isRunning)
         {
             elapsedTime = Time.time - startTimer;
-            UpdateTimer(elapsedTime);
+            timerText.text = FormatTime(elapsedTime);
         }
     }
 
-    void UpdateTimer(float elapsedTime)
+    public string FormatTime(float elapsedTime)
     {
         float minutes = Mathf.FloorToInt(elapsedTime / 60);
         float seconds = Mathf.FloorToInt(elapsedTime % 60);
         float miliseconds = Mathf.FloorToInt((elapsedTime * 100) % 100);
 
-        timerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, miliseconds);
+        return string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, miliseconds);
     }
 }
