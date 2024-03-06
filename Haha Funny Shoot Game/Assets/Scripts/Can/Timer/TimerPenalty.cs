@@ -10,7 +10,13 @@ public class TimerPenalty : MonoBehaviour
     {
         foreach (GameObject target in targets)
         {
-            timer.elapsedTime += 5;
+            TargetLugarPistol hitLuger = target.GetComponent<TargetLugarPistol>();
+            TargetM1Garand hitGarand = target.GetComponent<TargetM1Garand>();
+            if (!hitLuger.hit || !hitGarand.hit)
+            {
+                timer.elapsedTime += 5;
+                timer.isRunning = false;
+            }
         }
     }
 }

@@ -20,8 +20,10 @@ public class FinishLine : MonoBehaviour
         {
             penalty.CalculatePenalty();
             timer.StopRunning();
+            print("Passed thorugh");
             FinishRun();
         }
+
     }
     public void FinishRun()
     {
