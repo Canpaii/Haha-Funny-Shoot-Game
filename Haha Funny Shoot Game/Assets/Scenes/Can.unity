@@ -741,6 +741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787014859}
   - component: {fileID: 787014858}
+  - component: {fileID: 787014860}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -761,6 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1157017387}
+  penalty: {fileID: 787014860}
   elapsedTime: 0
 --- !u!4 &787014859
 Transform:
@@ -777,6 +779,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787014860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787014857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d9fa1c6b358ee48bdcb5fd64c780ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
 --- !u!1 &924379750 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7547803296303888857, guid: a052a228577afe54aa3a5d2c37a3eea2,
@@ -1311,6 +1326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 1111983282}
   timer: {fileID: 787014858}
+  penalty: {fileID: 787014860}
 --- !u!65 &1537811493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1781,6 +1797,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 924379750}
+    - target: {fileID: 800022838086857367, guid: 5c6bbcd04bb724743b11d1c38a4bd888,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6636766805980979443, guid: 5c6bbcd04bb724743b11d1c38a4bd888,
         type: 3}
       propertyPath: cameraPos
@@ -1860,6 +1881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Spawn 1 '
       objectReference: {fileID: 0}
+    - target: {fileID: 6156202766087504295, guid: 3161aaa116e1fda4bb242e571d2574a4,
+        type: 3}
+      propertyPath: timerPenalty
+      value: 
+      objectReference: {fileID: 787014860}
     - target: {fileID: 6156202766087504296, guid: 3161aaa116e1fda4bb242e571d2574a4,
         type: 3}
       propertyPath: m_RootOrder
