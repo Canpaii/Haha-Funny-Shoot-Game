@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     public TMP_Text timerText;
     public TimerPenalty penalty;
     private float startTimer;
-    private bool isRunning = false;
+    public bool isRunning = false;
     public float elapsedTime;
 
     public void StartRunning()
