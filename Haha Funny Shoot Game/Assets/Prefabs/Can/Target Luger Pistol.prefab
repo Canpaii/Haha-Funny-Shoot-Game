@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8382190629996117765}
   - component: {fileID: 8382190629996117764}
   - component: {fileID: 8382190629996117767}
-  - component: {fileID: 9161305632401718116}
+  - component: {fileID: 5926610471432988784}
   m_Layer: 0
-  m_Name: Target Lugar Pistol
+  m_Name: Target Luger Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9161305632401718116
+--- !u!114 &5926610471432988784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8382190629996117769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db5c4178f417704c8a3fc35021bb466, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d3193c0c20da54bb6ea6248fb8411d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  luger: 1
+  garand: 0
   hit: 0

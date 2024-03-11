@@ -8,7 +8,6 @@ using UnityEngine.Rendering;
 public class Timer : MonoBehaviour
 {
     public TMP_Text timerText;
-    public TimerPenalty penalty;
     private float startTimer;
     public bool isRunning = false;
     public float elapsedTime;

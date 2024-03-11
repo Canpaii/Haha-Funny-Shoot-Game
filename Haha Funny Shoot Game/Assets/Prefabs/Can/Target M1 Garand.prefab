@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6017652995032416953}
   - component: {fileID: 6017652995032416952}
   - component: {fileID: 6017652995032416955}
-  - component: {fileID: 6017652995032416954}
+  - component: {fileID: 4744706726020605983}
   m_Layer: 0
   m_Name: Target M1 Garand
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6017652995032416954
+--- !u!114 &4744706726020605983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6017652995032416949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12609ad37010451469da1617d7eaf6ba, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d3193c0c20da54bb6ea6248fb8411d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  luger: 0
+  garand: 1
   hit: 0

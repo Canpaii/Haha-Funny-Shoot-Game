@@ -112,28 +112,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2faa23cc062aafe42b0218b9e6a45068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenShooting: 0
-  spread: 0
-  zoomedSpread: 0
-  reloadTime: 0
-  shootForce: 0
-  magazineSize: 0
+  timeBetweenShooting: 0.3
+  spread: 0.03
+  zoomedSpread: 0.01
+  reloadTime: 2
+  shootForce: 30
+  magazineSize: 12
   allowButtonHold: 0
   bulletsLeft: 0
-  zoomedFOV: 0
-  normalFOV: 0
+  zoomedFOV: 50
+  normalFOV: 60
   shooting: 0
-  readyToShoot: 0
+  readyToShoot: 1
   reloading: 0
   zoomed: 0
-  fpsCam: {fileID: 0}
-  attackPoint: {fileID: 0}
-  bullet: {fileID: 0}
-  zoomedPos: {fileID: 0}
-  gunContainer: {fileID: 0}
-  sprintPos: {fileID: 0}
+  fpsCam: {fileID: 8418495644882669573}
+  attackPoint: {fileID: 1737053214}
+  bullet: {fileID: 2021379165320821281, guid: 58f2a1202d228aa4785a4ca67ecc3848, type: 3}
+  zoomedPos: {fileID: 7225920648338465786}
+  gunContainer: {fileID: 166422547045529339}
+  sprintPos: {fileID: 5280101648451331825}
   sprinting: {fileID: 0}
-  interpolationSpeed: 0
+  interpolationSpeed: 8
 --- !u!114 &51529073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5014246777052516448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5049220367742a4ea7f3dfcab43eaf6, type: 3}
   m_Name: 

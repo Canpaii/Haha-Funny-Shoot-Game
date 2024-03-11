@@ -19,11 +19,8 @@ public class FinishLine : MonoBehaviour
         if (other.transform.tag == "Player")
         {
             penalty.CalculatePenalty();
-            timer.StopRunning();
             print("Passed thorugh");
-            FinishRun();
         }
-
     }
     public void FinishRun()
     {
@@ -33,9 +30,13 @@ public class FinishLine : MonoBehaviour
             PlayerPrefs.Save();
             UpdateHighScoreDisplay();
         }
+        else if (timer.elapsedTime >= PlayerPrefs.GetFloat("HighScore"))
+        {
+            print("Highscore not reached");
+        }
         else
         {
-            print("Failed to update highscore");
+            print("Error with highscore");
         }
     }
     public void UpdateHighScoreDisplay()

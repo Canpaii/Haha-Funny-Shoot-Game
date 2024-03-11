@@ -12,7 +12,7 @@ public class SpawnScript : MonoBehaviour
     private int i;
     private int j;
 
-    public void Start()
+    public void Spawn()
     {
         i = Random.Range(0, spawner.Length);
         j = Random.Range(0, target.Length);
