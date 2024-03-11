@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class BasicMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BasicMovement : MonoBehaviour
     public float walkspeed;
     public float sprintSpeed;
     public bool sprinting;
+    public float climbSpeed;
     public float gravity;
     public float groundDrag;
 
@@ -50,6 +52,9 @@ public class BasicMovement : MonoBehaviour
     public bool exitingSlope;
     private RaycastHit slopeHit;
 
+    [Header("Climbing")]
+    public bool climbing;
+
     [Header("State")]
     // Define state player is in
     public MovementState state;
@@ -58,6 +63,7 @@ public class BasicMovement : MonoBehaviour
         walking,
         crouching,
         sprinting,
+        climbing,
         airSprint,
         airCrouch,
         air,
@@ -134,6 +140,11 @@ public class BasicMovement : MonoBehaviour
     }   
     private void StateHandler()
     {
+        if (climbing)
+        {
+            state = MovementState.climbing;
+            speed = climbSpeed;
+        }
         if (crouching && grounded) // crouching
         {
             state = MovementState.crouching;
@@ -191,7 +202,7 @@ public class BasicMovement : MonoBehaviour
         }
         else if (!grounded)
         {
-            rb.AddForce(moveDirection.normalized * speed * 10 * airMultiplier, ForceMode.Force); 
+            rb.AddForce(moveDirection.normalized * speed * 5 * airMultiplier, ForceMode.Force); 
         }
 
         rb.useGravity = !OnSlope();

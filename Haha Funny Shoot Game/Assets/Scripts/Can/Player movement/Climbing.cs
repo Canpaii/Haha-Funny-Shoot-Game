@@ -8,13 +8,10 @@ public class Climbing : MonoBehaviour
     public Transform orientation;
     public Rigidbody rb;
     public BasicMovement bm;
-    public LayerMask whatIsWall;
+    public LayerMask ladder;
 
     [Header("Climbing")]
     public float climbSpeed;
-    public float maxClimbTime;
-    private float climbTimer;
-
     private bool climbing;
 
     [Header("WallCheck")]
@@ -40,18 +37,7 @@ public class Climbing : MonoBehaviour
     {
         if (wallFront && Input.GetKey(KeyCode.W) && wallLookAngle < maxWallLookAngle)
         {
-            if (!climbing && climbTimer > 0)
-            {
-                StartClimbing();
-            }
-            if (climbTimer > 0)
-            {
-                climbTimer-= Time.deltaTime;
-            }
-            if (climbTimer < 0)
-            {
-                StopClimbing();
-            }
+             StartClimbing();
         }
         else
         {
@@ -63,24 +49,23 @@ public class Climbing : MonoBehaviour
     }
     private void WallCheck()
     {
-        wallFront = Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength, whatIsWall);
+        wallFront = Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength, ladder);
         wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
-
-        if (bm.grounded)
-        {
-            climbTimer = maxClimbTime;
-        }
     }
     private void StartClimbing()
     {
         climbing = true;
+        bm.climbing = true; 
     }
     private void ClimbingMovement()
     {
         rb.velocity = new Vector3(rb.velocity.x, climbSpeed, rb.velocity.z);
+
+        //sound effect
     }
     private void StopClimbing()
     {
         climbing = false;
+        bm.climbing = false;
     }
 }
