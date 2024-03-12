@@ -32,7 +32,6 @@ public class BasicMovement : MonoBehaviour
     public float crouchHeight;
     private float startYScale;
     public bool crouching;
-    
 
     [Header("Reference")]
     public Transform orientation;
