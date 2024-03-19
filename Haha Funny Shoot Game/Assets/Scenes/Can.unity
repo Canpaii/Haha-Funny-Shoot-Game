@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1371,7 +1371,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304644412}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 839e507e936570f47b77a1452705f6e9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1435,7 +1435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304644412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.89, y: 1.164, z: -21.43}
+  m_LocalPosition: {x: 9.89, y: 1.16, z: -21.43}
   m_LocalScale: {x: 0.1, y: 2.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2152,34 +2152,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 924379758, guid: a052a228577afe54aa3a5d2c37a3eea2, type: 3}
-      propertyPath: climbSpeed
-      value: 4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 924379758, guid: a052a228577afe54aa3a5d2c37a3eea2, type: 3}
-      propertyPath: maxClimbTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 924379758, guid: a052a228577afe54aa3a5d2c37a3eea2, type: 3}
-      propertyPath: ladderDetection
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 924379758, guid: a052a228577afe54aa3a5d2c37a3eea2, type: 3}
-      propertyPath: maxWallLookAngle
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 924379758, guid: a052a228577afe54aa3a5d2c37a3eea2, type: 3}
-      propertyPath: sphereCastRadius
-      value: 0.5
+      propertyPath: detectionLength
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7547803296303888857, guid: a052a228577afe54aa3a5d2c37a3eea2,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7547803296303888858, guid: a052a228577afe54aa3a5d2c37a3eea2,
-        type: 3}
-      propertyPath: climbSpeed
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7547803296303888858, guid: a052a228577afe54aa3a5d2c37a3eea2,
         type: 3}
@@ -2191,11 +2170,6 @@ PrefabInstance:
       propertyPath: zoomLugerPistol
       value: 
       objectReference: {fileID: 51529069}
-    - target: {fileID: 7547803296303888859, guid: a052a228577afe54aa3a5d2c37a3eea2,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7547803296303888862, guid: a052a228577afe54aa3a5d2c37a3eea2,
         type: 3}
       propertyPath: m_RootOrder

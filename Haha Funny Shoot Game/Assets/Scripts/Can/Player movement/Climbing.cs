@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Climbing : MonoBehaviour
 {
     [Header("References")]
-    public Transform orientation;
+    public Transform ladderCheck;
     public Rigidbody rb;
     public BasicMovement bm;
     public LayerMask ladder;
@@ -16,12 +17,10 @@ public class Climbing : MonoBehaviour
 
     [Header("WallCheck")]
     public float detectionLength;
-    public float sphereCastRadius;
-    public float maxWallLookAngle;
-    private float wallLookAngle;
 
+    public int ladderLayerIndex;
     private RaycastHit frontWallHit;
-    private bool wallFront;
+    private bool wall;
 
     private void Update()
     {
@@ -35,7 +34,7 @@ public class Climbing : MonoBehaviour
     }
     private void StateMachine()
     {
-        if (wallFront && Input.GetKey(KeyCode.W) && wallLookAngle < maxWallLookAngle)
+        if (wall && Input.GetKey(KeyCode.W))
         {
              StartClimbing();
         }
@@ -49,8 +48,8 @@ public class Climbing : MonoBehaviour
     }
     private void WallCheck()
     {
-        wallFront = Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength, ladder);
-        wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
+         wall = Physics.Raycast(ladderCheck.position, ladderCheck.forward, out frontWallHit, detectionLength, ladder);
+         Debug.DrawRay(ladderCheck.position, ladderCheck.forward,Color.red ,detectionLength);
     }
     private void StartClimbing()
     {
