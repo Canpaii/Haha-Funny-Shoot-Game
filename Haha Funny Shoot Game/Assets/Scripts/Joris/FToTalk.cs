@@ -15,10 +15,15 @@ public class FToTalk : MonoBehaviour
     public GameObject uitleg;
     public GameObject veelSucces;
 
+    public GameObject disCamera;
+
 
     // Update is called once per frame
     public void Hello()
     {
+
+        disCamera.GetComponent<CameraRotation>().enabled = false;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
          
@@ -53,12 +58,11 @@ public class FToTalk : MonoBehaviour
 
     public void ReallyBye()
     {
-        
-
-
         ok2.SetActive(false);
         veelSucces.SetActive (false);
 
         Cursor.visible = false;
+
+        disCamera.GetComponent<CameraRotation>().enabled = true;
     }
 }
