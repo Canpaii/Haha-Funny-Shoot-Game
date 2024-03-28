@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuitButton : MonoBehaviour
+public class QuitNo : MonoBehaviour
 {
     public GameObject start;
     public GameObject settings;
@@ -12,11 +12,11 @@ public class QuitButton : MonoBehaviour
     public GameObject quitYes;
     public void ButtonPress()
     {
-        start.SetActive(false);
-        settings.SetActive(false);
-        quit.SetActive(false);
-        logo.SetActive(false);
-        quitNo.SetActive(true);
-        quitYes.SetActive(true);
+        start.SetActive(true);
+        settings.SetActive(true);
+        quit.SetActive(true);
+        logo.SetActive(true);
+        quitNo.SetActive(false);
+        quitYes.SetActive(false);
     }
 }
