@@ -31,8 +31,10 @@ public class GunScript : MonoBehaviour
     public Transform zoomedPos;
     public Transform gunContainer;
     public Transform sprintPos;
-    public BasicMovement sprinting;
+    private GameObject player;
+    private BasicMovement sprinting;
     public HeadBob bob;
+    public GameObject crosshair;
 
     [Header("Other settings")]
     public float interpolationSpeed;
@@ -42,6 +44,8 @@ public class GunScript : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        player = GameObject.FindWithTag("Player");
+        sprinting = player.GetComponent<BasicMovement>();
     }
     public void Update()
     {
@@ -126,10 +130,12 @@ public class GunScript : MonoBehaviour
         {
             zoomed = true;
             sprinting.sprinting = false;
+            crosshair.SetActive(false);
         }
         else
         {
             zoomed = false;
+            crosshair.SetActive(true);
         }
 
         Transform targetPoint = Input.GetKey(KeyCode.Mouse1) ? zoomedPos : sprinting.sprinting ? sprintPos : gunContainer;

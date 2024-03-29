@@ -20,6 +20,7 @@ public class HeadBob : MonoBehaviour
     [SerializeField] private GameObject player;
     private BasicMovement sprinting;
     [SerializeField] private GunScript gun;
+    [SerializeField] private GunScript gun2;
     private void Awake()
     {
         startPos = transform.localPosition;
@@ -33,7 +34,7 @@ public class HeadBob : MonoBehaviour
     private void CheckMotion()
     {
         float inputMagnitude = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).magnitude;
-        if (inputMagnitude > 0 && !gun.zoomed)
+        if (inputMagnitude > 0 && !gun.zoomed && !gun2.zoomed)
         {
             FootStepMotion();
         }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6017652995032416958}
   - component: {fileID: 6017652995032416953}
   - component: {fileID: 6017652995032416952}
+  - component: {fileID: 4141971814324455580}
   m_Layer: 0
   m_Name: Target M1 Garand
   m_TagString: Untagged
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4141971814324455580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017652995032416949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d3193c0c20da54bb6ea6248fb8411d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luger: 0
+  garand: 1
+  hit: 0
