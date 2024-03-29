@@ -16,9 +16,10 @@ public class HeadBob : MonoBehaviour
     [SerializeField, Range(0, 30)] private float sprintFrequency;
 
     [SerializeField, Range(0, 10)] private float sprintSmooth;
-
+    [SerializeField, Range(0, 10)] private float returnSpeed;
     [SerializeField] private GameObject player;
     private BasicMovement sprinting;
+    [SerializeField] private GunScript gun;
     private void Awake()
     {
         startPos = transform.localPosition;
@@ -32,7 +33,7 @@ public class HeadBob : MonoBehaviour
     private void CheckMotion()
     {
         float inputMagnitude = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).magnitude;
-        if (inputMagnitude > 0)
+        if (inputMagnitude > 0 && !gun.zoomed)
         {
             FootStepMotion();
         }
@@ -56,6 +57,6 @@ public class HeadBob : MonoBehaviour
         {
             return;
         }
-        transform.localPosition = Vector3.Lerp(transform.localPosition, startPos,1 * Time.deltaTime);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, startPos, returnSpeed * Time.deltaTime);
     }
 }

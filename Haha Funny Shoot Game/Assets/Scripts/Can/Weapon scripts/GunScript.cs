@@ -32,6 +32,7 @@ public class GunScript : MonoBehaviour
     public Transform gunContainer;
     public Transform sprintPos;
     public BasicMovement sprinting;
+    public HeadBob bob;
 
     [Header("Other settings")]
     public float interpolationSpeed;
