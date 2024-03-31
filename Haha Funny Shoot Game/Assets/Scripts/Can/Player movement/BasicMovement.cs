@@ -33,6 +33,10 @@ public class BasicMovement : MonoBehaviour
     private float startYScale;
     public bool crouching;
 
+    [Header("Sliding")]
+    public bool sliding;
+    public float slidingTreshold;
+    public float slideTimer;
     [Header("Reference")]
     public Transform orientation;
     Rigidbody rb;
@@ -61,6 +65,7 @@ public class BasicMovement : MonoBehaviour
     {
         walking,
         crouching,
+        sliding,
         sprinting,
         climbing,
         airSprint,
@@ -112,16 +117,25 @@ public class BasicMovement : MonoBehaviour
             Jump();
             Invoke("ResetJump", jumpCooldown);
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl) && grounded)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && grounded) // nu kijkt ie maar 1 keer naar al deze conditions door getkeydown waardoor speed/velocity niet gaat zoals het hoort
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-            crouching = true;
+            if (rb.velocity.magnitude > slidingTreshold)
+            {
+                sliding = true;
+            }
+            else
+            {
+                crouching = true;
+                sliding = false;
+            }
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             crouching = false;
+            sliding = false;
         }
 
         if (rb.velocity == Vector3.zero && Input.GetKey(KeyCode.LeftShift))
@@ -149,6 +163,10 @@ public class BasicMovement : MonoBehaviour
             state = MovementState.crouching;
             speed = crouchSpeed;
             rayLength = crouchHeight;
+        }
+        else if (sliding)
+        {
+            state= MovementState.sliding;
         }
         else if(grounded && sprinting) // sprinting 
         {
@@ -203,7 +221,13 @@ public class BasicMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * speed * 5 * airMultiplier, ForceMode.Force); 
         }
-
+        if (sliding)
+        {
+            if (rb.velocity.magnitude > slidingTreshold)
+            {
+                speed = Mathf.Lerp(speed, crouchSpeed,slideTimer * Time.deltaTime);
+            }
+        }
         rb.useGravity = !OnSlope();
     }
     private void SpeedControl()
