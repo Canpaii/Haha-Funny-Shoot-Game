@@ -12,6 +12,7 @@ public class SettingsButton : MonoBehaviour
     public GameObject credits;
     public GameObject cancel;
     public GameObject logo;
+    public GameObject highscore;
  
     public void ButtonPress()
     {
@@ -19,6 +20,7 @@ public class SettingsButton : MonoBehaviour
         settings.SetActive(false);
         quit.SetActive(false);
         logo.SetActive(false);
+        highscore.SetActive(false);
         controls.SetActive(true);
         sounds.SetActive(true);
         credits.SetActive(true);

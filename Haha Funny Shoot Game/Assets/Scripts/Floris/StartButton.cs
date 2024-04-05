@@ -1,21 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
-    public GameObject start;
-    public GameObject settings;
-    public GameObject quit;
-    public GameObject logo;
-
-    public void ButtonPress()
+    public void MoveToScene (int sceneID)
     {
-        start.SetActive(false);
-        settings.SetActive(false);
-        quit.SetActive(false);
-        logo.SetActive(false);
+        SceneManager.LoadScene (sceneID);
     }
-
 }

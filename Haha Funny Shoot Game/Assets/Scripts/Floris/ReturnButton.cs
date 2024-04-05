@@ -12,6 +12,7 @@ public class ReturnButton : MonoBehaviour
     public GameObject credits;
     public GameObject cancel;
     public GameObject logo;
+    public GameObject highscore;
 
     public void ButtonPress()
     {
@@ -19,6 +20,7 @@ public class ReturnButton : MonoBehaviour
         settings.SetActive(true);
         quit.SetActive(true);
         logo.SetActive(true);
+        highscore.SetActive(true);
         controls.SetActive(false);
         sounds.SetActive(false);
         credits.SetActive(false);
