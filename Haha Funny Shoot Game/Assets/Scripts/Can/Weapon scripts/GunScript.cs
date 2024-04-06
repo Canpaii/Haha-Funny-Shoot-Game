@@ -115,7 +115,7 @@ public class GunScript : MonoBehaviour
     {
         reloading = true;
 
-       reloadCoroutine = StartCoroutine(ReloadCoroutine());
+        reloadCoroutine = StartCoroutine(ReloadCoroutine());
     }
     public IEnumerator ReloadCoroutine()
     {

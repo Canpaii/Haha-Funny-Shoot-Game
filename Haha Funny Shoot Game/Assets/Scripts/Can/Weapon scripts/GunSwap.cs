@@ -6,6 +6,7 @@ public class GunSwap : MonoBehaviour
 {
     public GameObject primaryGun;
     public GameObject secondaryGun;
+    public GameObject curActiveGun;
     public float scrollInput;
     void Update()
     {

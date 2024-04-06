@@ -166,7 +166,7 @@ public class BasicMovement : MonoBehaviour
         }
         else if (sliding)
         {
-            state= MovementState.sliding;
+            state = MovementState.sliding;
         }
         else if(grounded && sprinting) // sprinting 
         {
