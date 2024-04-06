@@ -6,11 +6,14 @@ public class StartLine : MonoBehaviour
 {
     public GameObject timer;
     public GameObject[] spawnScript;
+    public Collider col;
     public TimerPenalty timerPenalty;
     public void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == ("Player"))
+        if (other.transform.tag == ("Player") && !timer.GetComponent<Timer>().isRunning)
         {
+            col.GetComponent<Collider>().isTrigger = false;
+
             foreach (GameObject target in timerPenalty.targets)
             {
                Destroy(target);

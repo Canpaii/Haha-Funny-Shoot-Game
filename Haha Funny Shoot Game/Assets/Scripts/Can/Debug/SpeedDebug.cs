@@ -10,6 +10,6 @@ public class SpeedDebug : MonoBehaviour
 
     private void Update()
     {
-        speed.text = player.GetComponent<Rigidbody>().velocity.magnitude.ToString();
+        speed.text = player.GetComponent<Rigidbody>().velocity.magnitude.ToString("F2");
     }
 }

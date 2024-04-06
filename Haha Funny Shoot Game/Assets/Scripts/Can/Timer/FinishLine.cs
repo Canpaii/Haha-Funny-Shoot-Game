@@ -9,6 +9,7 @@ public class FinishLine : MonoBehaviour
     public TMP_Text highScoreText;
     public Timer timer;
     public TimerPenalty penalty;
+    public Collider col;
 
     public void Start()
     {
@@ -18,6 +19,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
+            col.isTrigger = true;
             penalty.CalculatePenalty();
             print("Passed thorugh");
         }

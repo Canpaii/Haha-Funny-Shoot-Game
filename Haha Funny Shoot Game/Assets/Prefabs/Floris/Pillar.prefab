@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5590503644332028993}
   - component: {fileID: 8807544318200970212}
   - component: {fileID: 6763942291933499182}
+  - component: {fileID: 6556980945913433980}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5106701397187866363}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.100000024, y: 1, z: 0.100000024}
   m_ConstrainProportionsScale: 0
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6556980945913433980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106701397187866363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2904947, y: 2.4897323, z: 2.3406599}
+  m_Center: {x: 0.6452472, y: 1.2538795, z: -0.9984397}
 --- !u!1001 &8693579785083130839
 PrefabInstance:
   m_ObjectHideFlags: 0
