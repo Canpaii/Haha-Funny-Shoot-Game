@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3036471454123853497}
   - component: {fileID: 992834788945195635}
   - component: {fileID: 5402366627664988081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SandBag goeie origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641488992909513638}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2172227, y: 0, z: -26.478456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641488992909513638}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 839e507e936570f47b77a1452705f6e9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
