@@ -44,7 +44,7 @@ public class FinishLine : MonoBehaviour
     public void UpdateHighScoreDisplay()
     {
         if (PlayerPrefs.HasKey("HighScore")){
-            highScoreText.text = "High Score: " + timer.FormatTime(PlayerPrefs.GetFloat("HighScore"));
+            highScoreText.text = "" + timer.FormatTime(PlayerPrefs.GetFloat("HighScore"));
         }
     }
 }
