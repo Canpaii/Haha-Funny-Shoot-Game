@@ -6,7 +6,6 @@ using UnityEngine;
 public class ReturnButton1 : MonoBehaviour
 {
     public GameObject controls;
-    public GameObject sounds;
     public GameObject credits;
     public GameObject cancel;
     public GameObject sensitivity;
@@ -15,7 +14,6 @@ public class ReturnButton1 : MonoBehaviour
     public void ButtonPress()
     {
         controls.SetActive(true);
-        sounds.SetActive(true);
         credits.SetActive(true);
         cancel.SetActive(true);
         sensitivity.SetActive(false);

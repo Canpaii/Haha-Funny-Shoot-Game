@@ -8,7 +8,6 @@ public class ReturnButtonCredits : MonoBehaviour
     public GameObject creditsButton;
     public GameObject returnButtonCredits;
     public GameObject controlsButton;
-    public GameObject soundsButton;
     public GameObject returnButtonSettings;
     public void ButtonPress()
     {
@@ -16,7 +15,6 @@ public class ReturnButtonCredits : MonoBehaviour
         returnButtonCredits.SetActive(false);
         creditsButton.SetActive(true);
         controlsButton.SetActive(true);
-        soundsButton.SetActive(true);
         returnButtonSettings.SetActive(true);
     }
 }

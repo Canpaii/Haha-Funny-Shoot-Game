@@ -5,7 +5,6 @@ using UnityEngine;
 public class ControlsButton : MonoBehaviour
 {
     public GameObject controls;
-    public GameObject sounds;
     public GameObject credits;
     public GameObject cancel;
     public GameObject sensitivity;
@@ -14,7 +13,6 @@ public class ControlsButton : MonoBehaviour
     public void ButtonPress()
     {
         controls.SetActive(false);
-        sounds.SetActive(false);
         credits.SetActive(false);
         cancel.SetActive(false);
         sensitivity.SetActive(true);
