@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028402, g: 0.2257143, b: 0.3069236, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d4157b5badd13f740917030899fdfa8d,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -48361,7 +48362,7 @@ PrefabInstance:
     - target: {fileID: 5590503644332028993, guid: a1f0b031efd5acb42833b09bb48a5760,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.9999967
+      value: 3.00006
       objectReference: {fileID: 0}
     - target: {fileID: 5590503644332028993, guid: a1f0b031efd5acb42833b09bb48a5760,
         type: 3}
@@ -61449,11 +61450,11 @@ Transform:
   - {fileID: 288051865}
   - {fileID: 110476847}
   - {fileID: 824653576}
+  - {fileID: 1781483892}
   - {fileID: 902061490}
   - {fileID: 307886320}
   - {fileID: 982626952}
   - {fileID: 1491168999}
-  - {fileID: 1781483892}
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64074,7 +64075,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268965197}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
