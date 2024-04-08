@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51529067}
-  m_Mesh: {fileID: 3190783831493649004, guid: e73d7995b0458be45b9c323e76452996, type: 3}
+  m_Mesh: {fileID: 3190783831493649004, guid: c7e6fdd6b39f7064a9b458c47699fbc4, type: 3}
 --- !u!23 &51529071
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   gunContainer: {fileID: 7024826379352005658}
   sprintPos: {fileID: 2592750700411342729}
   bob: {fileID: 263825506448689012}
+  crosshair: {fileID: 0}
   interpolationSpeed: 8
 --- !u!114 &51529073
 MonoBehaviour:
@@ -258,7 +259,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850286932}
-  m_Mesh: {fileID: 7085395965479770937, guid: ebfb3cbea2b8fdc478528e1b0dd85bde, type: 3}
+  m_Mesh: {fileID: 7085395965479770937, guid: 28a23f3998764e94daac540255fac7e0, type: 3}
 --- !u!23 &1850286936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
   gunContainer: {fileID: 166422547045529339}
   sprintPos: {fileID: 5280101648451331825}
   bob: {fileID: 263825506448689012}
+  crosshair: {fileID: 0}
   interpolationSpeed: 10
 --- !u!114 &1850286938
 MonoBehaviour:
@@ -562,7 +564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4696265858252012585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.012, z: 0.348}
+  m_LocalPosition: {x: 0, y: -0.012, z: 0.461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -767,6 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryGun: {fileID: 1850286932}
   secondaryGun: {fileID: 51529067}
+  curActiveGun: {fileID: 0}
   scrollInput: 0
 --- !u!114 &3712479519319782873
 MonoBehaviour:
@@ -808,7 +811,7 @@ MonoBehaviour:
   sprintSmooth: 3.5
   returnSpeed: 5.01
   player: {fileID: 0}
-  gun1: {fileID: 1850286934}
+  gun: {fileID: 0}
   gun2: {fileID: 51529069}
 --- !u!1 &6544597861885678343
 GameObject:
