@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveSettings : MonoBehaviour
 {
     public GameObject cameraScript;
-    public float f;
-    public void ButtonPress()
+    public float sensitivityValue;
+    public void Update()
     {
-        cameraScript.GetComponent<CameraRotation>().sensitivityX = f;
-        cameraScript.GetComponent<CameraRotation>().sensitivityY = f;
-        PlayerPrefs.SetFloat("sensitivity", f);
-        PlayerPrefs.Save();
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            PlayerPrefs.SetFloat("sensitivity", sensitivityValue);
+            PlayerPrefs.Save();
+            print("save");
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            sensitivityValue = PlayerPrefs.GetFloat("sensitivity");
+            sensitivityValue = PlayerPrefs.GetFloat("sensitivity");
+            print("load");
+        }
     }
 }

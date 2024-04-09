@@ -600,6 +600,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1938199198, guid: 5c6bbcd04bb724743b11d1c38a4bd888, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 1238736862}
+    - target: {fileID: 1938199198, guid: 5c6bbcd04bb724743b11d1c38a4bd888, type: 3}
+      propertyPath: orientation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938199198, guid: 5c6bbcd04bb724743b11d1c38a4bd888, type: 3}
+      propertyPath: sensitivityX
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938199198, guid: 5c6bbcd04bb724743b11d1c38a4bd888, type: 3}
+      propertyPath: sensitivityY
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938199198, guid: 5c6bbcd04bb724743b11d1c38a4bd888, type: 3}
+      propertyPath: sensitivitySlider
+      value: 
+      objectReference: {fileID: 1238736862}
     - target: {fileID: 8179544626763988244, guid: 5c6bbcd04bb724743b11d1c38a4bd888,
         type: 3}
       propertyPath: m_RootOrder
@@ -3453,7 +3473,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1238736860}
   - component: {fileID: 1238736862}
-  - component: {fileID: 1238736861}
   - component: {fileID: 1238736863}
   m_Layer: 5
   m_Name: SensitivitySlider
@@ -3486,19 +3505,6 @@ RectTransform:
   m_AnchoredPosition: {x: 200, y: 0}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0, y: 0.5}
---- !u!114 &1238736861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238736859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88d87085dd46394449884be4ae06aedd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraScript: {fileID: 2027045311}
 --- !u!114 &1238736862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3546,17 +3552,17 @@ MonoBehaviour:
   m_MinValue: 1
   m_MaxValue: 12
   m_WholeNumbers: 0
-  m_Value: 6
+  m_Value: 6.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238736861}
-        m_TargetAssemblyTypeName: SensitivitySlider, Assembly-CSharp
-        m_MethodName: SliderMovement
-        m_Mode: 0
+      - m_Target: {fileID: 1238736859}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3571,11 +3577,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238736859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a63ee45f84b624c8182bae821ad956, type: 3}
+  m_Script: {fileID: 11500000, guid: 90e122eb29ff9e04bacdfde51d91baf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraScript: {fileID: 2027045311}
-  f: 0
+  sensitivityX: 0
+  sensitivityY: 0
+  minXRotation: 0
+  maxXRotation: 0
+  sensitivitySlider: {fileID: 0}
+  orientation: {fileID: 0}
 --- !u!1 &1256888261
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,7 +5587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraScript: {fileID: 2027045311}
-  f: 0
+  sensitivityValue: 0
 --- !u!1 &1910068227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6076,6 +6086,7 @@ GameObject:
   - component: {fileID: 2034993775}
   - component: {fileID: 2034993777}
   - component: {fileID: 2034993776}
+  - component: {fileID: 2034993778}
   m_Layer: 5
   m_Name: Quick_Shot_Background
   m_TagString: Untagged
@@ -6141,3 +6152,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034993774}
   m_CullTransparentMesh: 1
+--- !u!114 &2034993778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034993774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a63ee45f84b624c8182bae821ad956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraScript: {fileID: 2027045311}
+  sensitivityValue: 0

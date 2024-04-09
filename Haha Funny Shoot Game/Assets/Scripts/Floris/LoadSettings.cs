@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class LoadSettings : MonoBehaviour
 {
-    private void Start()
-    {
-        PlayerPrefs.GetFloat("sensitivity");
+    [SerializeField]
 
+    public GameObject cameraScript;
+    float f;
+    void Start()
+    {
+        f = PlayerPrefs.GetFloat("sensitivity");
+        cameraScript.GetComponent<CameraRotation>().sensitivityX = f;
+        cameraScript.GetComponent<CameraRotation>().sensitivityY = f;
     }
 }

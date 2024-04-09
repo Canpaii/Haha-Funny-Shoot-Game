@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class SensitivitySlider : MonoBehaviour
 {
     public GameObject cameraScript;
-    public void SliderMovement(float f)
+    public float f;
+    public void Update()
     {
-        cameraScript.GetComponent<CameraRotation>().sensitivityX = f;
-        cameraScript.GetComponent<CameraRotation>().sensitivityY = f;
+        //cameraScript.GetComponent<CameraRotation>().sensitivityX = f;
+        //cameraScript.GetComponent<CameraRotation>().sensitivityY = f;
     }
 }

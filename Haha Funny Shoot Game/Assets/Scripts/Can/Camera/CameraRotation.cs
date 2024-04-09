@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CameraRotation : MonoBehaviour
 {
     public float sensitivityX;
@@ -14,6 +14,8 @@ public class CameraRotation : MonoBehaviour
     public float minXRotation;
     public float maxXRotation;
 
+    public Slider sensitivitySlider;
+
     public GameObject orientation;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,9 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        sensitivitySlider.value = sensitivityX;
+        sensitivitySlider.value = sensitivityY;
+        
         float mouseX = Input.GetAxis("Mouse X") * sensitivityX;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
 
