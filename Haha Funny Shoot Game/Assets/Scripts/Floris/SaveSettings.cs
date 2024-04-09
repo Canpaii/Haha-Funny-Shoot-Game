@@ -5,15 +5,12 @@ using UnityEngine;
 public class SaveSettings : MonoBehaviour
 {
     public GameObject cameraScript;
-    public void ButtonPress(float f)
+    public float f;
+    public void ButtonPress()
     {
         cameraScript.GetComponent<CameraRotation>().sensitivityX = f;
         cameraScript.GetComponent<CameraRotation>().sensitivityY = f;
         PlayerPrefs.SetFloat("sensitivity", f);
         PlayerPrefs.Save();
-    }
-    private void Start()
-    {
-        float sensitivity = PlayerPrefs.GetFloat("sensitivity");
     }
 }
