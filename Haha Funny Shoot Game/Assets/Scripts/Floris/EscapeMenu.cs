@@ -14,6 +14,7 @@ public class EscapeMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+
             if (checkForMenu == false)
             {
                 escMenu.SetActive(true);

@@ -10,7 +10,6 @@ public class QuitButton : MonoBehaviour
     public GameObject logo;
     public GameObject quitNo;
     public GameObject quitYes;
-    public GameObject highscore;
     public GameObject areYouSure;
     public void ButtonPress()
     {
@@ -18,7 +17,6 @@ public class QuitButton : MonoBehaviour
         settings.SetActive(false);
         quit.SetActive(false);
         logo.SetActive(false);
-        highscore.SetActive(false);
         quitNo.SetActive(true);
         quitYes.SetActive(true);
         areYouSure.SetActive(true);
