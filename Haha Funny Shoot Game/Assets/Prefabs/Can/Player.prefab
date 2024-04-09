@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7547803296303888863}
   - component: {fileID: 7547803296303888858}
   - component: {fileID: 924379758}
+  - component: {fileID: 6926614007034413311}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -85,7 +86,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7547803296303888857}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -130,10 +131,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.40108177
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.06530625, y: 0, z: -0.033611983}
 --- !u!54 &7547803296303888863
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,13 +164,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  walkspeed: 7
-  sprintSpeed: 10
+  walkspeed: 4
+  sprintSpeed: 7
   sprinting: 0
-  climbSpeed: 2
-  gravity: 2
+  climbSpeed: 5
+  gravity: 2.5
   groundDrag: 8
-  jumpForce: 8
+  jumpForce: 8.5
   jumpCooldown: 0.25
   airMultiplier: 0.4
   readyToJump: 1
@@ -177,6 +178,9 @@ MonoBehaviour:
   crouchYScale: 0.5
   crouchHeight: 1
   crouching: 0
+  sliding: 0
+  slidingTreshold: 3
+  slideTimer: 1
   orientation: {fileID: 7547803296605676047}
   zoomM1Garand: {fileID: 0}
   zoomLugerPistol: {fileID: 0}
@@ -186,7 +190,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   grounded: 1
-  maxSlopeAngle: 40
+  maxSlopeAngle: 50
   exitingSlope: 0
   climbing: 0
   state: 0
@@ -208,11 +212,26 @@ MonoBehaviour:
   ladder:
     serializedVersion: 2
     m_Bits: 512
-  climbSpeed: 4.5
+  climbSpeed: 5
   detectionLength: 0.6
-  sphereCastRadius: 0.5
-  maxWallLookAngle: 40
   ladderLayerIndex: 9
+--- !u!114 &6926614007034413311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547803296303888857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723cfb714333e954082c47ce40870598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escMenu: {fileID: 0}
+  timer: {fileID: 0}
+  highscoreTimer: {fileID: 0}
+  disCamera: {fileID: 0}
+  checkForMenu: 0
 --- !u!1 &7547803296605676046
 GameObject:
   m_ObjectHideFlags: 0
