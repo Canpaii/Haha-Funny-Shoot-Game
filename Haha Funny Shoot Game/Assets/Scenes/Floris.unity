@@ -3556,13 +3556,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238736859}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2027045312}
+        m_TargetAssemblyTypeName: CameraRotation, Assembly-CSharp
+        m_MethodName: AdjustSpeed
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5588,6 +5588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraScript: {fileID: 2027045311}
   sensitivityValue: 0
+  sensitivitySlider: {fileID: 0}
 --- !u!1 &1910068227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5940,6 +5941,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 212819425}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2027045312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1938199198, guid: 5c6bbcd04bb724743b11d1c38a4bd888,
+    type: 3}
+  m_PrefabInstance: {fileID: 212819425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027045311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e122eb29ff9e04bacdfde51d91baf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2029550843
 GameObject:
   m_ObjectHideFlags: 0
@@ -6166,3 +6179,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraScript: {fileID: 2027045311}
   sensitivityValue: 0
+  sensitivitySlider: {fileID: 1238736862}

@@ -26,9 +26,6 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sensitivitySlider.value = sensitivityX;
-        sensitivitySlider.value = sensitivityY;
-        
         float mouseX = Input.GetAxis("Mouse X") * sensitivityX;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
 
@@ -38,5 +35,10 @@ public class CameraRotation : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
         orientation.transform.rotation = Quaternion.Euler(0, rotationY, 0);
+    }
+    public void AdjustSpeed(float newSpeed)
+    {
+        sensitivityX = newSpeed;
+        sensitivityY = newSpeed;
     }
 }
