@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadSettings : MonoBehaviour
 {
-    [SerializeField]
-
     public GameObject cameraScript;
-    float f;
-    void Start()
+    public Slider sensitivitySlider;
+    public void Start()
     {
-        f = PlayerPrefs.GetFloat("sensitivity");
-        cameraScript.GetComponent<CameraRotation>().sensitivityX = f;
-        cameraScript.GetComponent<CameraRotation>().sensitivityY = f;
+        sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity");
+        print("load");
     }
 }

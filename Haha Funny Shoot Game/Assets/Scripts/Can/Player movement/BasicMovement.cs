@@ -20,6 +20,8 @@ public class BasicMovement : MonoBehaviour
     float hor;
     float vert;
 
+    public GameObject checkForRuntype;
+
     [Header("Jumping")]
     public float jumpForce;
     public float jumpCooldown;
@@ -117,38 +119,79 @@ public class BasicMovement : MonoBehaviour
             Jump();
             Invoke("ResetJump", jumpCooldown);
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl) && grounded) // nu kijkt ie maar 1 keer naar al deze conditions door getkeydown waardoor speed/velocity niet gaat zoals het hoort
+        if (checkForRuntype.GetComponent<Dropdown>().runType == 0)
         {
-            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-            if (rb.velocity.magnitude > slidingTreshold)
+            if (Input.GetKeyDown(KeyCode.LeftControl) && grounded) // nu kijkt ie maar 1 keer naar al deze conditions door getkeydown waardoor speed/velocity niet gaat zoals het hoort
             {
-                sliding = true;
+                transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+                rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+                if (rb.velocity.magnitude > slidingTreshold)
+                {
+                    sliding = true;
+                }
+                else
+                {
+                    crouching = true;
+                    sliding = false;
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            {
+                transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                crouching = false;
+                sliding = false;
+            }
+            
+            
+            if (rb.velocity == Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            {
+                sprinting = false;
+            }
+            else if (Input.GetKey(KeyCode.LeftShift) && !zoomM1Garand.zoomed && !zoomLugerPistol.zoomed)
+            {
+                sprinting = true;
             }
             else
             {
-                crouching = true;
-                sliding = false;
+                sprinting = false;
             }
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-            crouching = false;
-            sliding = false;
-        }
-
-        if (rb.velocity == Vector3.zero && Input.GetKey(KeyCode.LeftShift))
-        {
-            sprinting = false;
-        }
-        else if (Input.GetKey(KeyCode.LeftShift) && !zoomM1Garand.zoomed && !zoomLugerPistol.zoomed)
-        {
-            sprinting = true;
         }
         else
         {
-            sprinting = false;
+            if (Input.GetKeyDown(KeyCode.LeftShift) && grounded) // nu kijkt ie maar 1 keer naar al deze conditions door getkeydown waardoor speed/velocity niet gaat zoals het hoort
+            {
+                transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+                rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+                if (rb.velocity.magnitude > slidingTreshold)
+                {
+                    sliding = true;
+                }
+                else
+                {
+                    crouching = true;
+                    sliding = false;
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                crouching = false;
+                sliding = false;
+            }
+
+            
+            if (rb.velocity == Vector3.zero && Input.GetKey(KeyCode.LeftControl))
+            {
+                sprinting = false;
+            }
+            else if (Input.GetKey(KeyCode.LeftControl) && !zoomM1Garand.zoomed && !zoomLugerPistol.zoomed)
+            {
+                sprinting = true;
+            }
+            else
+            {
+                sprinting = false;
+            }
         }
     }   
     private void StateHandler()
