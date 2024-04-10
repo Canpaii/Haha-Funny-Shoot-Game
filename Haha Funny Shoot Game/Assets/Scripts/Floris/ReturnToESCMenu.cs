@@ -11,6 +11,7 @@ public class ReturnToESCMenu : MonoBehaviour
     public GameObject sensitivitySlider;
     public GameObject runType;
     public GameObject returnToESCMenu;
+    public bool allowToLeave;
     public void ButtonPress()
     {
         backGround.SetActive(false);
@@ -20,5 +21,6 @@ public class ReturnToESCMenu : MonoBehaviour
         returnToGame.SetActive(true);
         settings.SetActive(true);
         quitToMainMenu.SetActive(true);
+        allowToLeave = true;
     }
 }
