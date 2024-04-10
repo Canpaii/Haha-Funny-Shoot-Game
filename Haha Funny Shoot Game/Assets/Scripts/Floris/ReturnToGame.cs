@@ -9,9 +9,15 @@ public class ReturnToGame : MonoBehaviour
     public GameObject highscoreTimer;
     public GameObject disCamera;
     public GameObject escapeMenu;
+    public GameObject returnToGame;
+    public GameObject settings;
+    public GameObject quitToMainMenu;
     public void ButtonPress()
     {
         escMenu.SetActive(false);
+        returnToGame.SetActive(false);
+        settings.SetActive(false);
+        quitToMainMenu.SetActive(false);
         timer.SetActive(true);
         highscoreTimer.SetActive(true);
         Time.timeScale = 1;
