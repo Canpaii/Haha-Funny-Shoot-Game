@@ -64,5 +64,6 @@ public class FToTalk : MonoBehaviour
         Cursor.visible = false;
 
         disCamera.GetComponent<CameraRotation>().enabled = true;
+        print("why");
     }
 }
