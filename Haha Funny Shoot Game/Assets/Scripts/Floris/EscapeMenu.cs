@@ -15,6 +15,11 @@ public class EscapeMenu : MonoBehaviour
     public GameObject player;
     public bool checkForMenu;
 
+    public void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
