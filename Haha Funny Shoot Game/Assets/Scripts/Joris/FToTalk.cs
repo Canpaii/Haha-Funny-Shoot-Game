@@ -15,21 +15,28 @@ public class FToTalk : MonoBehaviour
     public GameObject uitleg;
     public GameObject veelSucces;
 
+    public GameObject backGround;
+
     public GameObject disCamera;
 
+    public GameObject player;
 
+    public GameObject allowToLeave;
+
+    public GameObject crosshair;
     // Update is called once per frame
     public void Hello()
     {
 
         disCamera.GetComponent<CameraRotation>().enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        
-         
+        player.GetComponent<CursorVisible>().cursorVis = true;
+
         yes1.SetActive (true);
         no1.SetActive (true);
         hello.SetActive (true);
+        backGround.SetActive (true);
+        crosshair.SetActive(false);
+        allowToLeave.GetComponent<EscapeMenu>().checkToLeave = false;
     }
 
     public void Explain()
@@ -59,11 +66,11 @@ public class FToTalk : MonoBehaviour
     public void ReallyBye()
     {
         ok2.SetActive(false);
-        veelSucces.SetActive (false);
-
-        Cursor.visible = false;
+        veelSucces.SetActive(false);
+        backGround.SetActive(false);
 
         disCamera.GetComponent<CameraRotation>().enabled = true;
-        print("why");
+        player.GetComponent<CursorVisible>().cursorVis = false;
+        allowToLeave.GetComponent<EscapeMenu>().checkToLeave = true;
     }
 }

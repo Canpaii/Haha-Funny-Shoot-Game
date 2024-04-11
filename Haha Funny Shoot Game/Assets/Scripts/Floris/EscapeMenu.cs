@@ -11,14 +11,15 @@ public class EscapeMenu : MonoBehaviour
     public GameObject returnToGame;
     public GameObject settings;
     public GameObject quitToMainMenu;
-    public GameObject checkToLeave;
+    public bool checkToLeave;
+    public GameObject player;
     public bool checkForMenu;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (checkToLeave.GetComponent<SettingsButtonESCMenu>().allowToLeave == true)
+            if (checkToLeave == true)
             {
                 if (checkForMenu == false)
                 {
@@ -30,6 +31,7 @@ public class EscapeMenu : MonoBehaviour
                     highscoreTimer.SetActive(false);
                     Time.timeScale = 0;
                     disCamera.GetComponent<CameraRotation>().enabled = false;
+                    player.GetComponent<CursorVisible>().cursorVis = true;
                     checkForMenu = true;
                 }
                 else
@@ -42,6 +44,7 @@ public class EscapeMenu : MonoBehaviour
                     highscoreTimer.SetActive(true);
                     Time.timeScale = 1;
                     disCamera.GetComponent<CameraRotation>().enabled = true;
+                    player.GetComponent<CursorVisible>().cursorVis = false;
                     checkForMenu = false;
                 }
             }

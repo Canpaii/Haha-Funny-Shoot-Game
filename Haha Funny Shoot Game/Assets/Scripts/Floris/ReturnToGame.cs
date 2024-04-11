@@ -12,6 +12,7 @@ public class ReturnToGame : MonoBehaviour
     public GameObject returnToGame;
     public GameObject settings;
     public GameObject quitToMainMenu;
+    public GameObject player;
     public void ButtonPress()
     {
         escMenu.SetActive(false);
@@ -21,7 +22,8 @@ public class ReturnToGame : MonoBehaviour
         timer.SetActive(true);
         highscoreTimer.SetActive(true);
         Time.timeScale = 1;
-        escapeMenu.GetComponent<EscapeMenu>().checkForMenu = false;
         disCamera.GetComponent<CameraRotation>().enabled = true;
+        player.GetComponent<CursorVisible>().cursorVis = false;
+        escapeMenu.GetComponent<EscapeMenu>().checkForMenu = false;
     }
 }

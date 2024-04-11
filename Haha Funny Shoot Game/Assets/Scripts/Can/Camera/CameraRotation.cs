@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 public class CameraRotation : MonoBehaviour
@@ -20,7 +20,7 @@ public class CameraRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
