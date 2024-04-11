@@ -93,7 +93,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5633333439769191939}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 839e507e936570f47b77a1452705f6e9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -106,7 +106,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5633333439769191939}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 839e507e936570f47b77a1452705f6e9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -119,7 +119,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5633333439769191939}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 839e507e936570f47b77a1452705f6e9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
