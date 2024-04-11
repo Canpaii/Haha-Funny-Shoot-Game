@@ -29,6 +29,7 @@ public class FToTalk : MonoBehaviour
     {
 
         disCamera.GetComponent<CameraRotation>().enabled = false;
+        player.GetComponent<BasicMovement>().enabled = false;
         player.GetComponent<CursorVisible>().cursorVis = true;
 
         yes1.SetActive (true);
@@ -70,6 +71,7 @@ public class FToTalk : MonoBehaviour
         backGround.SetActive(false);
 
         disCamera.GetComponent<CameraRotation>().enabled = true;
+        player.GetComponent<BasicMovement>().enabled = true;
         player.GetComponent<CursorVisible>().cursorVis = false;
         allowToLeave.GetComponent<EscapeMenu>().checkToLeave = true;
     }
