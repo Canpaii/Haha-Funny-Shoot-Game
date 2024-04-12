@@ -35,6 +35,9 @@ public class GunScript : MonoBehaviour
     private BasicMovement sprinting;
     public HeadBob bob;
     public GameObject crosshair;
+    public AudioClip[] shots;
+    private AudioSource shot;
+    public AudioSource reloadsfx;
 
     [Header("Other settings")]
     public float interpolationSpeed;
@@ -46,6 +49,7 @@ public class GunScript : MonoBehaviour
         readyToShoot = true;
         player = GameObject.FindWithTag("Player");
         sprinting = player.GetComponent<BasicMovement>();
+        shot = GetComponent<AudioSource>();
     }
     public void Update()
     {
@@ -83,6 +87,7 @@ public class GunScript : MonoBehaviour
             {
                 StopCoroutine(reloadCoroutine);
                 reloading = false;
+                reloadsfx.Stop();
             }
         }
     }
@@ -104,6 +109,10 @@ public class GunScript : MonoBehaviour
 
         bulletsLeft--;
 
+        int randomIndex = Random.Range(0, shots.Length);
+        shot.clip = shots[randomIndex];
+        shot.Play();
+
         GetComponent<GunRecoil>().Shoot();
         Invoke("ResetShot", timeBetweenShooting);
     }
@@ -119,6 +128,7 @@ public class GunScript : MonoBehaviour
     }
     public IEnumerator ReloadCoroutine()
     {
+        reloadsfx.Play();
         yield return new WaitForSeconds(reloadTime);
 
         bulletsLeft = magazineSize;

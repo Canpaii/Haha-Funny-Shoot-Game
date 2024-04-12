@@ -10,7 +10,7 @@ public class FinishLine : MonoBehaviour
     public Timer timer;
     public TimerPenalty penalty;
     public Collider col;
-
+    public Collider col2;
     public void Start()
     {
         UpdateHighScoreDisplay();
@@ -20,6 +20,7 @@ public class FinishLine : MonoBehaviour
         if (other.transform.tag == "Player")
         {
             col.isTrigger = true;
+            col2.isTrigger = false;
             penalty.CalculatePenalty();
             print("Passed thorugh");
         }

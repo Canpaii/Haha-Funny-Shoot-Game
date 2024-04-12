@@ -114,13 +114,15 @@ MonoBehaviour:
   reloading: 0
   zoomed: 0
   fpsCam: {fileID: 8418495644882669573}
-  attackPoint: {fileID: 1737053214}
+  attackPoint: {fileID: 1500167377}
   bullet: {fileID: 2021379165320821281, guid: 58f2a1202d228aa4785a4ca67ecc3848, type: 3}
   zoomedPos: {fileID: 4928592247734588985}
   gunContainer: {fileID: 7024826379352005658}
   sprintPos: {fileID: 2592750700411342729}
   bob: {fileID: 263825506448689012}
   crosshair: {fileID: 0}
+  shots: []
+  reloadsfx: {fileID: 0}
   interpolationSpeed: 8
 --- !u!114 &51529073
 MonoBehaviour:
@@ -336,6 +338,8 @@ MonoBehaviour:
   sprintPos: {fileID: 5280101648451331825}
   bob: {fileID: 263825506448689012}
   crosshair: {fileID: 0}
+  shots: []
+  reloadsfx: {fileID: 0}
   interpolationSpeed: 10
 --- !u!114 &1850286938
 MonoBehaviour:
@@ -790,7 +794,11 @@ MonoBehaviour:
   hello: {fileID: 0}
   uitleg: {fileID: 0}
   veelSucces: {fileID: 0}
+  backGround: {fileID: 0}
   disCamera: {fileID: 0}
+  player: {fileID: 0}
+  allowToLeave: {fileID: 0}
+  crosshair: {fileID: 0}
 --- !u!114 &263825506448689012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,4 +1040,5 @@ MonoBehaviour:
   sensitivityY: 7
   minXRotation: -85
   maxXRotation: 85
+  sensitivitySlider: {fileID: 0}
   orientation: {fileID: 0}
