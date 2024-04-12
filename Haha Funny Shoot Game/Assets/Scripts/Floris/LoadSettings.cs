@@ -11,8 +11,15 @@ public class LoadSettings : MonoBehaviour
     public TMP_Dropdown runTypeDropDown;
     public void Start()
     {
-        sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity");
-        runTypeDropDown.value = PlayerPrefs.GetInt("runType");
-        print("load");
+        if (PlayerPrefs.HasKey ("sensitivity"))
+        {
+            sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity");
+            runTypeDropDown.value = PlayerPrefs.GetInt("runType");
+            print("load");
+        }
+        else
+        {
+            print("NoSave");
+        }
     }
 }
